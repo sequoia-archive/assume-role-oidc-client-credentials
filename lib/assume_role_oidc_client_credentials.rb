@@ -60,6 +60,10 @@ module Aws
         super
     end
 
+    def inspect
+        "#<#{self.class.name} client_id=#{@client_id.inspect}>"
+    end
+
     private
 
     # Override the _token_from_file
@@ -68,7 +72,7 @@ module Aws
     end
 
     def _get_token
-        RestClient.log = STDOUT
+        #RestClient.log = STDOUT
         begin
             resp = RestClient.post(@token_url, 
                 { grant_type: "client_credentials", scope: URI.encode_www_form(@scopes), },
