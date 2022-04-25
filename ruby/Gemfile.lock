@@ -42,7 +42,7 @@ GEM
     mime-types-data (3.2022.0105)
     netrc (0.11.0)
     public_suffix (4.0.6)
-    rake (10.5.0)
+    rake (12.3.3)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -78,7 +78,7 @@ DEPENDENCIES
   aws-sdk-core!
   bundler (~> 2.1)
   json
-  rake (~> 10.0)
+  rake (~> 12.3)
   rspec
   rspec-mocks (~> 3.0)
   webmock
