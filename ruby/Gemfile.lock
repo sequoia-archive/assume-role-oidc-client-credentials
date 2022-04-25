@@ -10,6 +10,13 @@ GIT
       aws-sigv4 (~> 1.1)
       jmespath (~> 1.0)
 
+PATH
+  remote: .
+  specs:
+    assume-role-oidc-client-credentials (0.2.0)
+      aws-sdk-core (~> 3.0)
+      rest-client
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -35,6 +42,7 @@ GEM
     mime-types-data (3.2022.0105)
     netrc (0.11.0)
     public_suffix (4.0.6)
+    rake (10.5.0)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -66,10 +74,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  assume-role-oidc-client-credentials!
   aws-sdk-core!
+  bundler (~> 2.1)
   json
-  rest-client
+  rake (~> 10.0)
   rspec
+  rspec-mocks (~> 3.0)
   webmock
 
 BUNDLED WITH

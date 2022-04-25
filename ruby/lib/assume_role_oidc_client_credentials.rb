@@ -39,7 +39,7 @@ module Aws
     # @option options [required, String] :token_url
     #   The OIDC URL to get the web identity token
     #
-    # @option options [required, Array] :scopes
+    # @option options [Array] :scopes
     #   An array of OIDC scopes to pass in to the token endpoint
     #
     # @option options [String] :role_session_name the IAM session
@@ -75,7 +75,7 @@ module Aws
         #RestClient.log = STDOUT
         begin
             resp = RestClient.post(@token_url, 
-                { grant_type: "client_credentials", scope: URI.encode_www_form(@scopes), },
+                { grant_type: "client_credentials", scope: @scopes ? URI.encode_www_form(@scopes) : nil, },
                 { accept: :json, "cache-control": "no-cache", "Authorization": "Basic " + Base64.strict_encode64(@client_id.to_s + ":" + @client_secret.to_s) }
             )
 
